@@ -150,7 +150,7 @@ X2 = np.linspace(X2_min, X2_max, n2)
 X1M, X2M = np.meshgrid(X1, X2, indexing='xy')
 
 
-tau = 0.0
+tau = 0
 
 # create initial Phi, V, vectors
 Phi_vector = Phi(tau, X1M, X2M, a, b, c, d)
@@ -165,21 +165,38 @@ J = calculate_jacobian(F)
 # --------------------------------------------------------------------
 
 # set up figure, and turn grid on
-fig, ax = plt.subplots(1,1, dpi=150, figsize=[5,5])
+fig, axs = plt.subplots(1,2, dpi=150, figsize=[6,6])
+ax = axs[0]; ax.set_title('Eulerian view')
 ax.grid(True)
 
 # fix the observer, in space to always be looking at the region 
 # centered at origin
-ax.set_xlim([-5,5])
-ax.set_ylim([-5,5])
+ax.set_xlim([-2.5,2.5])
+ax.set_ylim([-2.5,2.5])
+ax.set_aspect('equal')
 
 # plot initial Lagrangian points
 ax.scatter(Phi_vector[:,:, 0], Phi_vector[:,:, 1], marker='.')
 
-# plot Lagrangian velocity vectors
+# plot velocity vectors on Eulerian Markers
 vector_plot = ax.quiver(Phi_vector[:,:, 0], Phi_vector[:,:, 1], V_vector[:,:, 0], V_vector[:,:, 1], scale_units='xy', scale=10)#, width=0.0025)
+
+ax = axs[1]; ax.set_title('Lagrangian view')
+ax.grid(True)
+
+# fix the observer, in space to always be looking at the region 
+# centered at origin
+ax.set_xlim([-2.5,2.5])
+ax.set_ylim([-2.5,2.5])
+ax.set_aspect('equal')
+
+# plot Lagrangian points
+ax.scatter(X1M, X2M, marker='.', color='green')
+
+# plot velocity vectors on Lagrangian Markers
+vector_plot = ax.quiver(X1M, X2M, V_vector[:,:, 0], V_vector[:,:, 1], scale_units='xy', scale=10)#, width=0.0025)
 
 # save figure using f-string formatting, with tau variable
 figure_name = f'img_at_tau_{tau:2.4f}.png'
-plt.savefig(figure_name)
-plt.show()
+# plt.savefig(figure_name)
+# plt.show()
