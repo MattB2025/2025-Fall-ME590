@@ -150,7 +150,7 @@ X2 = np.linspace(X2_min, X2_max, n2)
 X1M, X2M = np.meshgrid(X1, X2, indexing='xy')
 
 
-tau = 0
+tau = 0.25
 
 # create initial Phi, V, vectors
 Phi_vector = Phi(tau, X1M, X2M, a, b, c, d)
@@ -171,8 +171,8 @@ ax.grid(True)
 
 # fix the observer, in space to always be looking at the region 
 # centered at origin
-ax.set_xlim([-2.5,2.5])
-ax.set_ylim([-2.5,2.5])
+ax.set_xlim([-3.5,3.5])
+ax.set_ylim([-3.5,3.5])
 ax.set_aspect('equal')
 
 # plot initial Lagrangian points
