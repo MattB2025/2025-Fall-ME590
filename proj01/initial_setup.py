@@ -198,5 +198,5 @@ vector_plot = ax.quiver(X1M, X2M, V_vector[:,:, 0], V_vector[:,:, 1], scale_unit
 
 # save figure using f-string formatting, with tau variable
 figure_name = f'img_at_tau_{tau:2.4f}.png'
-# plt.savefig(figure_name)
-# plt.show()
+plt.savefig(figure_name)
+plt.show()
