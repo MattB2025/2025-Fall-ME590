@@ -208,3 +208,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+Phi_1_at_tau_0.00.png
+Phi_1_at_tau_0.10.png
+Phi_1_at_tau_0.25.png
+Phi_1_at_tau_0.50.png
+Phi_1_at_tau_1.00.png
+Phi_1_at_tau_10.00.png
+Phi_1_at_tau_100.00.png
