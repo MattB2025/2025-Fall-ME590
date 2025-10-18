@@ -1,7 +1,7 @@
 # Project 2
 
 This project directory includes a python script `example_vector_plots.py` that plots a set of streamlines for two representative flows from the lecture. Those scripts were output by ChatGPT, given the following two vector fields:
-$$
+```math
 \begin{align}
 \begin{bmatrix}u\\v\end{bmatrix}
  &= \begin{bmatrix}y/R\\-x/R\end{bmatrix}
@@ -9,7 +9,7 @@ $$
  \begin{bmatrix}u\\v\end{bmatrix}
  &= \begin{bmatrix}x\\-y\end{bmatrix}\
  \end{align}
-$$
+```
 
 where $R = \sqrt{x^2 + y^2}$. The velocity fields correspond to circular and hyperbolic flows. Some edits were made for the output plots to better visualize the vectors and streamlines.
 
